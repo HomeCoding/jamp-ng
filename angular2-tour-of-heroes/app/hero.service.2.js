@@ -9,27 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var hero_1 = require('./hero');
-var HeroDetailComponent = (function () {
-    function HeroDetailComponent() {
+var mock_heroes_1 = require('./mock-heroes');
+var HeroService = (function () {
+    function HeroService() {
     }
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', hero_1.Hero)
-    ], HeroDetailComponent.prototype, "hero", void 0);
-    HeroDetailComponent = __decorate([
-        core_1.Component({
-            selector: 'my-hero-detail',
-            template: "\n    <div *ngIf=\"hero\">\n      <h2>{{hero.name}} details!</h2>\n      <div>\n        <label>id: </label>{{hero.id}}\n      </div>\n      <div>\n        <label>name: </label>\n        <input [(ngModel)]=\"hero.name\" placeholder=\"name\"/>\n      </div>\n    </div>\n  "
-        }), 
+    HeroService.prototype.getHeroes = function () {
+        return mock_heroes_1.HEROES;
+    };
+    HeroService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], HeroDetailComponent);
-    return HeroDetailComponent;
+    ], HeroService);
+    return HeroService;
 }());
-exports.HeroDetailComponent = HeroDetailComponent;
+exports.HeroService = HeroService;
 /*
 Copyright 2016 Google Inc. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */ 
-//# sourceMappingURL=hero-detail.component.js.map
+//# sourceMappingURL=hero.service.2.js.map
